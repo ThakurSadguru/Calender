@@ -1,0 +1,117 @@
+/* General Reset and Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #6f97c4;
+}
+
+.calender {
+    width: 380px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Days of the Week */
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+}
+
+.day {
+    text-align: center;
+    padding: 5px;
+    color: #999fa6;
+    font-weight: 500;
+}
+
+/* Dates Grid */
+.dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 10px;
+}
+
+/* Date Cells */
+.date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 1em;
+}
+
+/* Inactive Dates (for previous and next month) */
+.date.inactive {
+    background-color: #f0f0f0;
+    color: #ccc;
+}
+
+/* Active Date (Today) */
+.date.active {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+/* Hover Effect for Date Cells */
+.date:hover {
+    background-color: #e0e0e0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .calender {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .monthYear {
+        font-size: 1.2em;
+    }
+
+    .date {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
